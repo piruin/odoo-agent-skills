@@ -78,6 +78,7 @@ Enforced patterns for consistent, secure code:
 ```
 agent-skills/
 ├── skills/
+│   ├── odoo-17.0/             # Odoo 17 guides
 │   ├── odoo-18.0/             # Odoo 18 guides
 │   ├── odoo-19.0/             # Odoo 19 guides
 │   ├── dtg-base/              # DTGBase utilities
@@ -130,7 +131,7 @@ graph LR
 
 | Metric | Value |
 |--------|-------|
-| Documentation | 10,000+ lines |
+| Documentation | 55,000+ lines |
 | Skill packs | 11 (Odoo 17.0, 18.0, 19.0, DTG Base, Payment, Code Review, Brainstorming, Writing Skills, MCP Builder, Slide, Visual Explainer) |
 | Agents | 3 (Odoo Code Review, Odoo Code Tracer, Planner) |
 | License | MIT |
