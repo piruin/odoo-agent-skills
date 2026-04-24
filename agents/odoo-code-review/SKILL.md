@@ -11,8 +11,8 @@ Review Odoo code changes against clear criteria, identify risks, and score using
 
 ## Pre-review Requirements
 
-- Read `skills/odoo/18.0/SKILL.md` as the master index for all Odoo 18 guides.
-- Read relevant guides from `skills/odoo/18.0/dev/` based on change scope:
+- Read `skills/odoo-18.0/SKILL.md` as the master index for all Odoo 18 guides.
+- Read relevant guides from `skills/odoo-18.0/references/` based on change scope:
   - **Models/ORM**: `odoo-18-model-guide.md`
   - **Fields**: `odoo-18-field-guide.md`
   - **Decorators**: `odoo-18-decorator-guide.md`
@@ -247,72 +247,72 @@ When reviewing, thoroughly check:
 1. **Does @api.depends have complete dependencies?**
    - Check dotted paths: `partner_id.email` instead of just `partner_id`
    - Missing dependencies cause N queries
-   - Reference: `dev/odoo-18-decorator-guide.md`
+   - Reference: `skills/odoo-18.0/references/odoo-18-decorator-guide.md`
 
 2. **Are there N+1 queries?**
    - Loop with `search()`, `browse()`, `read()` inside
    - Solution: `search_read()` with `IN` domain or `read_group()`
-   - Reference: `dev/odoo-18-performance-guide.md`
+   - Reference: `skills/odoo-18.0/references/odoo-18-performance-guide.md`
 
 3. **Are there batch operations?**
    - `create()`, `write()`, `unlink()` in loop
    - Solution: Batch operations on recordset
-   - Reference: `dev/odoo-18-performance-guide.md`
+   - Reference: `skills/odoo-18.0/references/odoo-18-performance-guide.md`
 
 4. **Is transaction safe?**
    - UniqueViolation handling without savepoint
    - Concurrent updates without advisory lock
-   - Reference: `dev/odoo-18-transaction-guide.md`
+   - Reference: `skills/odoo-18.0/references/odoo-18-transaction-guide.md`
 
 5. **Are Odoo 18 patterns correct?**
    - Use `<list>` instead of `<tree>`
    - Use `@api.ondelete()` instead of overriding `unlink()`
    - Use `@api.model_create_multi` for batch create
-   - Reference: `dev/odoo-18-view-guide.md`
+   - Reference: `skills/odoo-18.0/references/odoo-18-view-guide.md`
 
 6. **Are field definitions correct?**
    - `Monetary` with `currency_field`
    - `Many2one` with `ondelete`
    - Computed field with `store=True` if needed
-   - Reference: `dev/odoo-18-field-guide.md`
+   - Reference: `skills/odoo-18.0/references/odoo-18-field-guide.md`
 
 7. **Is exception handling correct?**
    - `UserError`, `ValidationError`, `AccessError`
    - No generic `Exception`
-   - Reference: `dev/odoo-18-security-guide.md`
+   - Reference: `skills/odoo-18.0/references/odoo-18-security-guide.md`
 
 8. **Are mixins properly configured?**
    - `mail.thread` with proper tracking fields
    - `mail.activity.mixin` for activities
    - `mail.alias.mixin` with alias fields
-   - Reference: `dev/odoo-18-mixins-guide.md`
+   - Reference: `skills/odoo-18.0/references/odoo-18-mixins-guide.md`
 
 9. **Is testing adequate?**
    - Tests for new functionality
    - Proper use of `@tagged` decorators
    - Query count assertions for performance
-   - Reference: `dev/odoo-18-testing-guide.md`
+   - Reference: `skills/odoo-18.0/references/odoo-18-testing-guide.md`
 
 10. **Are migrations handled correctly?**
     - Proper migration script location
     - Pre/post migration scripts
     - Idempotent operations
-    - Reference: `dev/odoo-18-migration-guide.md`
+    - Reference: `skills/odoo-18.0/references/odoo-18-migration-guide.md`
 
 11. **Are actions properly defined?**
     - Window actions with correct context
     - Server actions for automation
     - Cron jobs with proper intervals
-    - Reference: `dev/odoo-18-actions-guide.md`
+    - Reference: `skills/odoo-18.0/references/odoo-18-actions-guide.md`
 
 12. **Are data files correct?**
     - Proper XML record structure
     - `noupdate="1"` for reference data
     - CSV data properly formatted
-    - Reference: `dev/odoo-18-data-guide.md`
+    - Reference: `skills/odoo-18.0/references/odoo-18-data-guide.md`
 
 13. **Is manifest correct?**
     - All dependencies declared
     - External dependencies listed
     - Hooks properly configured
-    - Reference: `dev/odoo-18-manifest-guide.md`
+    - Reference: `skills/odoo-18.0/references/odoo-18-manifest-guide.md`
