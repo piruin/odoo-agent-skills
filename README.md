@@ -102,7 +102,7 @@ def _compute_total(self):
 <td valign="top">
 
 ```python
-# Odoo 18 conventions:
+# Odoo conventions (17 / 18 / 19):
 # Monetary + @api.depends + store
 total_with_tax = fields.Monetary(
     compute='_compute_total_with_tax',
