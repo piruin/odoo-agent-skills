@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [1.0.10]
 
 ### Release Description
 Made the Odoo agents version-aware (17 / 18 / 19) so they load the right reference pack automatically instead of always citing Odoo 18 APIs. Also fixed broken guide paths in `odoo-code-review`.
