@@ -4,8 +4,25 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Release Description
+Made the Odoo agents version-aware (17 / 18 / 19) so they load the right reference pack automatically instead of always citing Odoo 18 APIs. Also fixed broken guide paths in `odoo-code-review`.
+
 ### Added
-- TODO: Add upcoming changes here.
+- `skills/odoo-17.0/references/api-highlights.md`, `skills/odoo-18.0/references/api-highlights.md`, `skills/odoo-19.0/references/api-highlights.md` — per-version, version-distinguishing rulesets (list tag, attrs syntax, aggregator parameter, optional `_name` in v19, etc.) that the agents load alongside the general checklist.
+- Target-version resolution step in `agents/odoo-code-review/SKILL.md` and `agents/odoo-code-tracer/SKILL.md` with a four-level fallback: explicit argument → project config (`.odoo-version`, `.claude/odoo.json`, `package.json`, `pyproject.toml`) → `__manifest__.py` heuristic → default to latest (`19.0`).
+- README section "Targeting an Odoo version" documenting the resolution order.
+
+### Changed
+- `agents/odoo-code-review/SKILL.md` rewritten version-neutral. Every guide reference now uses `skills/odoo-${ODOO_VERSION}/references/odoo-${ODOO_MAJOR}-*-guide.md` placeholders resolved at invocation time.
+- `agents/odoo-code-tracer/SKILL.md` generalised: agent description, "Specific Patterns" section, and "Related Skills" no longer hard-code Odoo 18.
+- `README.md` Odoo example comment generalised from "Odoo 18 conventions" to "Odoo conventions (17 / 18 / 19)" since the pattern is identical across supported versions.
+
+### Fixed
+- `agents/odoo-code-review/SKILL.md` guide paths: `skills/odoo/18.0/` → `skills/odoo-18.0/`, and `dev/odoo-18-*-guide.md` → `references/odoo-18-*-guide.md` (the original paths did not exist in the repo).
+
+### Notes
+- Supported version matrix: **17.0, 18.0, 19.0**. Older versions are out of scope.
+- Addresses #7.
 
 ## [1.0.9]
 

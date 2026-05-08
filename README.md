@@ -102,7 +102,7 @@ def _compute_total(self):
 <td valign="top">
 
 ```python
-# Odoo 18 conventions:
+# Odoo conventions (17 / 18 / 19):
 # Monetary + @api.depends + store
 total_with_tax = fields.Monetary(
     compute='_compute_total_with_tax',
@@ -149,9 +149,20 @@ Specialized agents that act as senior technical leads:
 
 | Agent | What it does |
 |-------|--------------|
-| **[Odoo Code Review](agents/odoo-code-review/SKILL.md)** | Reviews Odoo code with scoring (1–10) and structured feedback |
-| **[Odoo Code Tracer](agents/odoo-code-tracer/SKILL.md)** | Traces execution flow from an entry point through the call graph |
+| **[Odoo Code Review](agents/odoo-code-review/SKILL.md)** | Reviews Odoo code with scoring and structured feedback. Version-aware (17 / 18 / 19). |
+| **[Odoo Code Tracer](agents/odoo-code-tracer/SKILL.md)** | Traces execution flow from an entry point through the call graph. Version-aware (17 / 18 / 19). |
 | **[Planner](agents/planner.md)** | Breaks down complex features into actionable implementation steps |
+
+#### Targeting an Odoo version
+
+The Odoo agents automatically pick the right reference pack (`skills/odoo-17.0/`, `odoo-18.0/`, or `odoo-19.0/`). Resolution order:
+
+1. **Explicit argument** passed to the agent (`odoo_version: "19.0"`).
+2. **Project config**, in order: `.odoo-version` file at the repo root, `odoo_version` in `.claude/odoo.json`, `odoo.version` in `package.json`, or `tool.odoo.version` in `pyproject.toml`.
+3. **Manifest heuristic** — the dominant major version found in workspace `__manifest__.py` files.
+4. **Fallback** — latest supported (`19.0`). The agent states the assumption in its output.
+
+Per-version rule deltas (e.g. `<tree>` vs `<list>`, `group_operator=` vs `aggregator=`, optional `_name` in v19) live in each pack's `references/api-highlights.md`.
 
 ### Rules — Coding Standards
 
