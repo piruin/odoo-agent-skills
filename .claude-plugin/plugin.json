@@ -16,16 +16,12 @@
       "agents/odoo-code-tracer/SKILL.md"
     ],
     "skills": [
-      "skills/brainstorming/SKILL.md",
       "skills/code-review/SKILL.md",
       "skills/dtg-base/SKILL.md",
-      "skills/mcp-builder/SKILL.md",
       "skills/odoo-17.0/SKILL.md",
       "skills/odoo-18.0/SKILL.md",
       "skills/odoo-19.0/SKILL.md",
-      "skills/payment-integration/SKILL.md",
-      "skills/slide/SKILL.md",
-      "skills/writing-skills/SKILL.md"
+      "skills/slide/SKILL.md"
     ],
     "rules": [
       "rules/coding-style.md",

@@ -60,6 +60,34 @@ jobs:
       - name: Run skill and manifest validator
         run: npm test
 
+  skill-security-scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write   # for SARIF upload
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Scan skills with skillspector
+        run: |
+          uv tool install git+https://github.com/NVIDIA/skillspector.git
+          # ponytail: --no-llm = static only, no API key. Add an LLM key + drop the flag for deeper analysis.
+          # --baseline suppresses today's accepted findings, so the gate only fails on NEW ones (risk > 50).
+          # Regenerate after intentional changes: skillspector baseline ./skills/ --no-llm
+          skillspector scan ./skills/ --no-llm \
+            --baseline .skillspector-baseline.yaml \
+            --format sarif --output skillspector.sarif
+
+      - name: Upload SARIF to code scanning
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: skillspector.sarif
+
   changelog-guard:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
