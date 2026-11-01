@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file.
 - `website/`: a landing page (English and Vietnamese, light and dark): a terminal replaying real `odoo_trace` output on Odoo 18 source, the intro film (`intro.mp4`), the six failures it targets, the workflow, the trace helper, the `x_age_days` comparison, the benchmarks, the toolkit and the three install routes with copy buttons. `.github/workflows/pages.yml` publishes it to GitHub Pages when it changes on `main` (Settings → Pages → Source: GitHub Actions).
 - `lib/video/`: the 64-second intro film, as code. `intro.html` draws every frame as a function of time (the HUD, the architecture diagram, the `sale.order` trace graph, the pipeline, the benchmark charts); `score.mjs` synthesizes a 120 BPM score and a sound for every motion on the picture's cues; `render.py` renders both to a 1080p60 MP4 with Playwright and ffmpeg. Every `odoo_trace` line in it is the helper's output on Odoo 18.0 source, every number is from the benchmark. The rendered MP4 is ignored here.
 
+- `skills/odoo-ship/`: ships a change end to end — commit through `odoo-commit`, squash own work-in-progress commits without an interactive editor, rebase onto a moved base, run pre-commit, push, then open or update the PR from the repo's template and follow CI. Rewrites history and force-pushes with a lease only on a branch whose commits are all the user's own.
+- `skills/unit-testing-guidelines/`: assert observable behaviour, derive expected results from requirements rather than from production code, one scenario per test, pick a reliable boundary (`TransactionCase` for ORM behaviour over a mocked `env`), and prioritise by risk instead of coverage. Applies to writing tests and to reviewing them.
+
 ### Changed
+- `README.md` lists both new skills under Skills.
 - Removed the `slide`, `flow-diagram` and generic `code-review` skill packs and the `planner` agent: the toolkit is now Odoo-only. Odoo review stays with the `odoo-code-review` agent.
 
 ## [1.0.20]

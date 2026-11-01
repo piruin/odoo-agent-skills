@@ -292,7 +292,9 @@ Ask for the evidence: the Brief, the test summary line, and which checks were sk
 | [Odoo 19.0](skills/odoo-19.0/) | Version-specific development references and API highlights. |
 | [Odoo Workflow](skills/odoo-workflow/) | Trace-first procedure for every Odoo change: runtime detection, the trace helper, a cited Context Brief, and a definition of done run on a throwaway database. |
 | [Odoo Commit](skills/odoo-commit/) | Odoo-style commit messages, explicit staging, and commit preparation. |
+| [Odoo Ship](skills/odoo-ship/) | Takes a change from commit to open PR: squashes work-in-progress commits, rebases onto the base, runs pre-commit, pushes, fills the repo's PR template, then follows CI. |
 | [DTG Base](skills/dtg-base/) | References for DTGBase utilities: dates, timezones, batches, barcodes, text, and files. |
+| [Unit Testing Guidelines](skills/unit-testing-guidelines/) | Test boundaries, assertions, determinism, and risk-based coverage, including when to reach for `TransactionCase` instead of mocking `env`. |
 
 Each Odoo pack starts from its `SKILL.md` index and `references/api-highlights.md`, then one guide
 per topic: models, fields, decorators, views, OWL, security, controllers, actions, data, reports,
