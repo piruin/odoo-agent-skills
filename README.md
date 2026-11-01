@@ -309,7 +309,9 @@ testing, performance, transactions, migrations, translations, mixins, manifests,
 
 ### Rules
 
+- [Clean code](rules/clean-code.md): comments that explain why rather than what, docstrings only where they earn their place, intent-revealing names, small functions, and smallest-coherent-change refactoring.
 - [Coding style](rules/coding-style.md): naming, imports, and code organization.
+- [No AI attribution](rules/no-attribution.md): keeps Claude and Anthropic credit lines out of commits, PR and issue descriptions, and written output.
 - [Security](rules/security.md): practices to fold into project instructions and review.
 
 ## Odoo versions and runtime
