@@ -12,10 +12,11 @@ All notable changes to this project will be documented in this file.
 - `skills/unit-testing-guidelines/`: assert observable behaviour, derive expected results from requirements rather than from production code, one scenario per test, pick a reliable boundary (`TransactionCase` for ORM behaviour over a mocked `env`), and prioritise by risk instead of coverage. Applies to writing tests and to reviewing them.
 
 - `rules/clean-code.md`: comments are a last resort, not documentation — code says what, comments say why. Intent-revealing names over `data` / `result` / `process_data`, single-purpose functions, docstrings only for public APIs and non-obvious contracts, fail-clearly error handling, and smallest-coherent-change refactoring. `rules/coding-style.md` stays the authority on import placement and the forbidden-name list.
+- `rules/communication.md`: assume technical expertise, not contextual memory. Describe identifiers like `D1` or `Option B` on first mention, finish one topic before the next, state each point once with no ritual closing summary, and separate decisions the user must make from ones the agent can make. Response language is left to the user's profile.
 - `rules/no-attribution.md`: no Claude or Anthropic attribution in commit messages, PR and issue descriptions, or any written output, overriding tool defaults that would add it.
 
 ### Changed
-- `README.md` lists both new skills under Skills and both new rules under Rules.
+- `README.md` lists the new skills under Skills and the new rules under Rules.
 - Removed the `slide`, `flow-diagram` and generic `code-review` skill packs and the `planner` agent: the toolkit is now Odoo-only. Odoo review stays with the `odoo-code-review` agent.
 
 ## [1.0.20]
