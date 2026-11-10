@@ -313,6 +313,7 @@ testing, performance, transactions, migrations, translations, mixins, manifests,
 - [Communication](rules/communication.md): assume technical expertise, not contextual memory — self-explanatory references instead of opaque IDs, one topic at a time, no redundant summaries, and decisions stated with context and a recommendation.
 - [Coding style](rules/coding-style.md): naming, imports, and code organization.
 - [No AI attribution](rules/no-attribution.md): keeps Claude and Anthropic credit lines out of commits, PR and issue descriptions, and written output.
+- [Software design](rules/software-design.md): module-level design — deliberate dependency direction, dependencies declared where they are used at runtime, boundaries that protect against real coupling risk, and four questions to answer before adding an abstraction, layer, or dependency.
 - [Security](rules/security.md): practices to fold into project instructions and review.
 
 ## Odoo versions and runtime

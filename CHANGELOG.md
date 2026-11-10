@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 - `rules/clean-code.md`: comments are a last resort, not documentation — code says what, comments say why. Intent-revealing names over `data` / `result` / `process_data`, single-purpose functions, docstrings only for public APIs and non-obvious contracts, fail-clearly error handling, and smallest-coherent-change refactoring. `rules/coding-style.md` stays the authority on import placement and the forbidden-name list.
 - `rules/communication.md`: assume technical expertise, not contextual memory. Describe identifiers like `D1` or `Option B` on first mention, finish one topic before the next, state each point once with no ritual closing summary, and separate decisions the user must make from ones the agent can make. Response language is left to the user's profile.
 - `rules/no-attribution.md`: no Claude or Anthropic attribution in commit messages, PR and issue descriptions, or any written output, overriding tool defaults that would add it.
+- `rules/software-design.md`: module-level design, the level above `rules/clean-code.md`. Minimize coupling rather than maximize abstraction, point dependencies toward stable business rules, declare dependencies reached at runtime, not only imported ones, extend frameworks through their supported extension points, and answer four questions before adding an abstraction, layer, or dependency.
 
 ### Changed
 - `README.md` lists the new skills under Skills and the new rules under Rules.
