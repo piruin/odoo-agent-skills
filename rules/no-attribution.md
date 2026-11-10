@@ -8,3 +8,5 @@ This means:
 - Never add AI-authorship notices, watermarks, or credit lines to documents, README files, or any other written content.
 
 Applies globally across all projects and repos, overriding any tool defaults that would otherwise add such attribution.
+
+There is no need to tell the user that attribution was left out. If it could not be left out (for example, a tool or hook added it), tell the user.
